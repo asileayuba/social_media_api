@@ -1,0 +1,17 @@
+{
+  "python.analysis.typeCheckingMode": "off",
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "python.formatting.provider": "black",
+    "python.formatOnSave": true,
+    "ruff.organizeImports": false,
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.fixAll": "explicit"
+        }
+    },
+    "files.autoSave": "onWindowChange",
+    "cSpell.advanced.feature.useReferenceProviderWithRename": true,
+    "editor.defaultFoldingRangeProvider": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+}
