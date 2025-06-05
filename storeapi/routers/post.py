@@ -22,7 +22,7 @@ def find_post(post_id: int):
 
 @router.post("/post", response_model=UserPost, status_code=201)
 async def create_post(post: UserPostIn) -> UserPost:
-    data = post.dict()
+    data = post.model_dump()
     last_record_id = len(post_table)
     new_post = UserPost(id=last_record_id, **data)
     post_table[last_record_id] = new_post
@@ -40,7 +40,7 @@ async def create_comment(comment: CommentIn):
     if not post:
         raise HTTPException(status_code=404, detail="post not found")
 
-    data = comment.dict()
+    data = comment.model_dump()
     last_record_id = len(comment_table)
     new_comment = Comment(id=last_record_id, **data)
     comment_table[last_record_id] = new_comment
